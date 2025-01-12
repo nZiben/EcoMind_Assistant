@@ -1,37 +1,37 @@
-# Описание решения для проекта экологического анализа
+# Description of the solution for the environmental analysis project
 
-### Основная задача
-Создание модуля для автоматического анализа источников загрязнений и сравнения с нормативными показателями. Для этого были использованы передовые методы обработки специализированных данных.
-
-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-
-### Решение
-1. **Дообучение ЯндексГПТ-PRO**  
-   Создание крупного датасета вопросов и ответов с использованием ЯндексГПТ для учебных и нормативных материалов.
-
-2. **Создание базы знаний**  
-   Векторизация нормативов и учебников с помощью Open-Source Encoder-only LLM и сохранение в базе данных ChromaDB.
-
-3. **Обработка таблиц**  
-   Исходные файлы конвертируются в Web Layout для объединения разорванных таблиц. Извлечение таблиц выполняется с помощью `python-docx`, затем модели ЯндексГПТ суммаризируют их и сохраняют в `.txt`.
-
-4. **Многослойный RAG**  
-   Построены две векторные базы данных для базы знаний и загруженных данных. RAG-система с двумя ретриверами и ЯндексГПТ-PRO генерирует ответы на основе данных и нормативов.
+### Main task
+Creation of a module for automatic analysis of pollution sources and comparison with regulatory indicators. Advanced methods of specialized data processing were used for this purpose.
 
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-### Результаты работы
-Система автоматизирует анализ экологических отчетов, снижая влияние человеческого фактора и повышая точность обработки данных. Это позволяет предприятиям и регуляторам быстрее выявлять экологические риски и своевременно принимать меры.
+### Solution
+1. **Additional training for Yandex.GPT-PRO**  
+   Creating a large dataset of questions and answers using Yandex.Maps for educational and regulatory materials.
+
+2. **Creating a knowledge base**  
+   Vectorization of standards and textbooks using Open-Source Encoder-only LLM and storage in the ChromaDB database.
+
+3. **Table processing**  
+   The source files are converted to Web Layout to combine the torn tables. The tables are extracted using python-docx, then the Yandex.gpt models summarize them and save them to .txt.
+
+4. **Multi-layered RAG**  
+   Two vector databases have been built for the knowledge base and the uploaded data. The RAG system with two retrievers and Yandex.GPT-PRO generates responses based on data and regulations.
 
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-### Описание файлов
-- eco_QnA_dataset.jsonl - датасет, сгенерированный с помощью YandexGPT из приложенных источников и использовавшийся для дообучения
+### Work results
+The system automates the analysis of environmental reports, reducing the impact of the human factor and increasing the accuracy of data processing. This allows businesses and regulators to identify environmental risks faster and take timely action.
 
-- documents/RAG - база знаний, использованная для создания контекста к запросу
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-- src/summarization.ipynb - ноутбук с суммаризацией
+### File Description
+- eco_QnA_dataset.jsonl - dataset generated using YandexGPT from the attached sources and used for further training
 
-- src/main.py - скрипт для использования дообученной модели в синхронном режиме
+- documents/RAG - the knowledge base used to create the context for the query
 
-- src/ecology_api.py - скрипт для доступа к модели по API
+- src/summarization.ipynb - laptop with summarization
+
+- src/main.py - a script for using a pre-trained model in synchronous mode
+
+- src/ecology_api.py - script for accessing the model via API
