@@ -30,7 +30,7 @@ The system automates the analysis of environmental reports, reducing the impact 
 
 - documents/RAG - the knowledge base used to create the context for the query
 
-- src/summarization.ipynb - laptop with summarization
+- src/summarization.ipynb - notebook with summarization
 
 - src/main.py - a script for using a pre-trained model in synchronous mode
 
